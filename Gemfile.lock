@@ -7,6 +7,8 @@ GEM
     faraday (1.2.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     method_source (1.0.0)
     minitest (5.8.0)
     minitest-reporters (1.4.2)
@@ -20,12 +22,14 @@ GEM
       method_source (~> 1.0)
     ruby-progressbar (1.10.1)
     ruby2_keywords (0.0.2)
+    thor (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   faraday
+  figaro
   minitest
   minitest-reporters
   pry
