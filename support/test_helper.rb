@@ -20,7 +20,7 @@ end
 def make_request(params, url = ENV['BASE_URL'])
   full_path = "#{url}#{params}"
   res = get(full_path)
-  @last_response = res
+  @last_response = JSON.parse(res.body, symbolize_names: true)
   @curl = set_curl(res)
   res
 end
