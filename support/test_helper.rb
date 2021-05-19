@@ -6,6 +6,7 @@ require 'json'
 require 'minitest/autorun'
 require 'minitest/reporters'
 require 'pry'
+require 'uri'
 
 def test_client
   @test_client ||= Faraday.new do |f|
@@ -37,4 +38,8 @@ def set_curl(res)
   <<~CURL
     See: curl -X "#{res.env.method.upcase}" "#{res.env.url}"
   CURL
+end
+
+def valid_uri?(uri)
+  !!(uri =~ URI.regexp)
 end
