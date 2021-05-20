@@ -2,11 +2,13 @@ require File.expand_path('../support/test_helper', __dir__)
 
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'dotenv/load'
 
 class ApiTest < Minitest::Test
   def setup
     @url = 'http://www.omdbapi.com/'
-    @apikey = 'apikey=8d48d285'
+    @key = ENV['OMDb_API_KEY']
+    @apikey = "apikey=#{@key}"
   end
 
   def test_no_api_key
@@ -18,7 +20,6 @@ class ApiTest < Minitest::Test
 
   def test_thomas_search_has_valid_returns
     make_request("?s=thomas&#{@apikey}", "#{@url}")
-
     last_response[:Search].each do |res|
       # Verify all titles are a relevant match
       assert_includes res[:Title].downcase, 'thomas'
@@ -71,7 +72,7 @@ class ApiTest < Minitest::Test
     unique_results = results.uniq {|res| res[:imdbID]}
 
     assert_equal 50, results.count
-    assert_equal 49, unique_results.count 
+    assert_equal 49, unique_results.count
     refute_equal results.count, unique_results.count
   end
 
@@ -95,7 +96,6 @@ class ApiTest < Minitest::Test
     good_result = {Year: "2020–"}
     assert valid_year?(good_result)
 
-    # used assert_equal false below instead of `refute valid_year?(bad_result)` because I wanted to make sure we weren't getting a nil response
     bad_result = {Year: "sfgsr"}
     assert_equal false, valid_year?(bad_result)
 
