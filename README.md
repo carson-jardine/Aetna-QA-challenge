@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Challenge Overview](#challenge-overview)
 - [Getting Started](#getting-started)
-- [Helpful Information and Notes](#helpful-information-and-notes)
+- [Helpful Information & Notes](#helpful-information--notes)
 - [Acknowledgements](#acknowledgements)
 
 ***
