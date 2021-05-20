@@ -5,5 +5,5 @@ group :test do
   gem 'minitest'
   gem 'minitest-reporters'
   gem 'faraday'
-  gem 'figaro'
+  gem 'dotenv'
 end
