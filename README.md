@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Challenge Overview](#challenge-overview)
 - [Getting Started](#getting-started)
-- [Helpful Information & Notes](#helpful-information-&-notes)
+- [Helpful Information and Notes](#helpful-information-and-notes)
 - [Acknowledgements](#acknowledgements)
 
 ***
@@ -47,16 +47,26 @@ It is time to run some tests against OMDb API - The Open Movie Database!
 1. Fork and/or clone this repository.
 2. `cd Aetna-QA-challenge`
 3. Run `bundle install` to install gem packages.
+4. Visit the [OMDb website] to get your own API key.
+5. Add your API key to the `.env` file, keep the `OMDb_API_KEY` name.  
 
 ### Testing: 
 - Run tests: `ruby suite/api_test.rb`
 
 ***
 ## Helpful Information & Notes
-- I added the gem `figaro` in order to store my API key as an environment variable. However, I was not able to successfully implement it within the half-day timeframe.  
+- I added the gem `dotenv` in order to store my API key as an environment variable. 
 - Starting with the tests on line 94, I opted to use `assert_equal false, method_name(result)` instead of `refute method_name(result)` as I wanted the tests to pass only if the response was `false` instead of passing from either a `nil` or a `false` response.  
 - For the last task(#7), I tested that the API could return all movies with the keyword `carson` that were released in 2020. There were more than I expected! I checked that the only type of results we were getting were `movies` from `2020` with the keyword `carson` in the title. 
 
 ***
 ## Acknowledgements:
 Thank you for taking the time to review my code! Looking forward to walking through it soon :)
+
+***
+## Bonus Joke!
+Did you hear about the new Peekaboo virus?
+...
+...
+...
+They reccommend that if you get it, you go straight to the **ICU**
