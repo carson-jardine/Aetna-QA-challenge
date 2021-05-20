@@ -1,8 +1,18 @@
 # QA API Code Test
+## Carson Jardine
 
 It is time to run some tests against OMDb API - The Open Movie Database!
 
-## Tips:
+## Table of Contents
+- [Challenge Overview](#challenge-overview)
+- [Getting Started](#getting-started)
+- [Helpful Information & Notes](#helpful-information-&-notes)
+- [Acknowledgements](#acknowledgements)
+
+***
+## Challenge Overview:
+
+### Tips:
 
 - You can find the main api page at http://www.omdbapi.com
 - You must use minitest and faraday as supplied, and follow the existing pattern of api requests in test_no_api_key.
@@ -10,7 +20,7 @@ It is time to run some tests against OMDb API - The Open Movie Database!
 - Completed repo should allow for easy setup/running of your test file.
 - Unique or helpful information should be documented in the readme.
 
-## Tasks:
+### Tasks:
 
 1. Successfully make api requests to omdbapi from within tests in api_test.rb
 
@@ -30,3 +40,24 @@ It is time to run some tests against OMDb API - The Open Movie Database!
 6. Add a test that verifies there are no duplicate records across the first 5 pages
 
 7. Add a test that verifies something you are curious about with regard to movies or data in the database.
+
+***
+## Getting Started:
+
+### Local Setup:
+1. Fork and/or clone this repository.
+2. `cd Aetna-QA-challenge`
+3. Run `bundle install` to install gem packages.
+
+### Testing: 
+- Run tests: `ruby suite/api_test.rb`
+
+***
+## Helpful Information & Notes
+- I added the gem `figaro` in order to store my API key as an environment variable. However, I was not able to successfully implement it within the half-day timeframe.  
+- Starting with the tests on line 94, I opted to use `assert_equal false, method_name(result)` instead of `refute method_name(result)` as I wanted the tests to pass only if the response was `false` instead of passing from either a `nil` or a `false` response.  
+- For the last task(#7), I tested that the API could return all movies with the keyword `carson` that were released in 2020. There were more than I expected! I checked that the only type of result we were getting were `movies` from `2020` with the keyword `carson` in the title. 
+
+***
+## Acknowledgements:
+Thank you for taking the time to review my code! Looking forward to walking through it soon :)
