@@ -47,7 +47,7 @@ It is time to run some tests against OMDb API - The Open Movie Database!
 1. Fork and/or clone this repository.
 2. `cd Aetna-QA-challenge`
 3. Run `bundle install` to install gem packages.
-4. Visit the [OMDb website] to get your own API key.
+4. Visit the [OMDb website](http://www.omdbapi.com/) to get your own API key.
 5. Add your API key to the `.env` file, keep the `OMDb_API_KEY` name.  
 
 ### Testing: 
