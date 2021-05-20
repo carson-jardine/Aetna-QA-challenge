@@ -43,3 +43,27 @@ end
 def valid_uri?(uri)
   !!(uri =~ URI.regexp)
 end
+
+def valid_year?(result)
+  year = result[:Year]
+
+  if year.to_i.to_s != year && year.to_i != 0 && year.length > 5
+    year_array = []
+    split_year = year_splitter(year)
+    split_year.each_slice(4) {|e| year_array << e.join('')}
+    year_array.each {|yr| year_checker(yr)}
+  elsif year.to_i.to_s != year && year.to_i != 0
+    split_year = year_splitter(year)
+    year_checker(split_year.join(''))
+  else
+    year_checker(year)
+  end
+end
+
+def year_checker(year)
+  year.to_i.between?(1800, 2099)
+end
+
+def year_splitter(year)
+  year.split('').delete_if {|e| e == '–'}
+end
